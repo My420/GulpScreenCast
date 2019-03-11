@@ -1,0 +1,18 @@
+{
+  "name": "gulpscreencast",
+  "version": "1.0.0",
+  "description": "lern.javascript.ru Gulp screnncast",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"    
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "klinovitsky aleksey",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
