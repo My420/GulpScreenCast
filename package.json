@@ -4,15 +4,22 @@
   "description": "lern.javascript.ru Gulp screnncast",
   "main": "index.js",
   "scripts": {
-    "test": "test"    
+    "test": "test"
   },
   "keywords": [
     "gulp"
   ],
   "author": "klinovitsky aleksey",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "del": "^4.0.0",
+    "gulp-sourcemaps": "^2.6.5"
+  },
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0"
   }
 }
