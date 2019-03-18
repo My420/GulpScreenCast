@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "del": "^4.0.0",
+    "gulp-newer": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5"
   },
   "devDependencies": {
