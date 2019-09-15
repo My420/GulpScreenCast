@@ -1,0 +1,36 @@
+{
+  "name": "projectname",
+  "version": "0.0.1",
+  "description": "description",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "set NODE_ENV=development&& gulp dev",
+    "build": "set NODE_ENV=production&& gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/My420/GulpScreenCast.git"
+  },
+  "keywords": [
+    "project",
+    "keywords"
+  ],
+  "author": "Klinovitsky Aleksey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/My420/GulpScreenCast/issues"
+  },
+  "homepage": "https://github.com/My420/GulpScreenCast#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.12.0",
+    "rollup": "^1.21.3"
+  }
+}
