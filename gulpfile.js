@@ -5,6 +5,7 @@ const gulpif = require('gulp-if');
 const del = require('del');
 const rollup = require('gulp-better-rollup');
 const babel = require('rollup-plugin-babel');
+const terser = require('gulp-terser');
 const browserSync = require('browser-sync').create();
 
 const isDevelopment =
@@ -31,6 +32,7 @@ gulp.task('js', () => {
         'iife'
       )
     )
+    .pipe(gulpif(!isDevelopment, terser()))
     .pipe(gulpif(isDevelopment, sourcemaps.write('')))
     .pipe(gulp.dest('build/js'));
 });
