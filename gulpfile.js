@@ -4,6 +4,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 const del = require('del');
 const rollup = require('gulp-better-rollup');
+const babel = require('rollup-plugin-babel');
 const browserSync = require('browser-sync').create();
 
 const isDevelopment =
@@ -22,7 +23,14 @@ gulp.task('js', () => {
   return gulp
     .src('src/js/main.js')
     .pipe(gulpif(isDevelopment, sourcemaps.init()))
-    .pipe(rollup({}, 'iife'))
+    .pipe(
+      rollup(
+        {
+          plugins: [babel()]
+        },
+        'iife'
+      )
+    )
     .pipe(gulpif(isDevelopment, sourcemaps.write('')))
     .pipe(gulp.dest('build/js'));
 });
