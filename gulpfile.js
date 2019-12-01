@@ -9,6 +9,7 @@ const del = require("del");
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
 const terser = require("gulp-terser");
+const imagemin = require("gulp-imagemin");
 const browserSync = require("browser-sync").create();
 
 const isDevelopment =
@@ -48,7 +49,19 @@ gulp.task("html", () => {
 
 gulp.task("image", () => {
   return gulp
-    .src("src/img/**/*.{png,jpeg,jpg,gif,svg}")
+    .src("src/img/**/*.{png,jpeg,jpg,gif,svg}", {
+      since: gulp.lastRun("image")
+    })
+    .pipe(
+      imagemin([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.jpegtran({ progressive: true }),
+        imagemin.optipng({ optimizationLevel: 3 }),
+        imagemin.svgo({
+          plugins: [{ removeXMLNS: true }, { cleanupIDs: false }]
+        })
+      ])
+    )
     .pipe(gulp.dest("build/img"));
 });
 
